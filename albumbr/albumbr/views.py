@@ -21,3 +21,8 @@ def login_view(request):
     else:
         # Show an error page
         return HttpResponseRedirect("/account/invalid/")
+
+def logout_view(request):
+    auth.logout(request)
+    # Redirect to a success page.
+    return HttpResponseRedirect("/account/loggedout/")
