@@ -1,11 +1,11 @@
 # Create your views here.
 from django.http import HttpResponse
-from django.template import Context, loader
+from django.template import *
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib import auth
 
 def index(request):
-	return render_to_response('welcome/index.html', {})
+	return render_to_response('welcome/index.html', {},  context_instance=RequestContext(request))
 
 
 
