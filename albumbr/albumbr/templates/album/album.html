@@ -1,10 +1,10 @@
 {% extends "album/album_base.html" %}
 
 {% block album_content %}
-    
+
+ 
     <div class="container">
 
-      <!-- Main hero unit for a primary marketing message or call to action -->
       <div class="hero-unit">
         <h2>Your albums</h2>
         <p>You can creat, view, edit or delete the album</p>
@@ -21,27 +21,71 @@
                   </div>
                 </div>
               </li>
+             {% for album in user.albums.all %}     
              <li class="span4">
                 <div class="thumbnail">
                   <img src="http://carryoncitizens.com/files/600px-WiimoteButton1_svg.png" alt="Thumbnail">
                   <div class="caption">
-                    <h3>album's name</h3>
-                    <p>album's description</p>
+                    <h3>{{ album.name }}</h3>
+                    <p>{{ album.description }}</p>
                     <p><a href="#" class="btn btn-primary">View</a> <a href="#" class="btn btn-success">Edit</a> <a href="#" class="btn btn-danger">Delete</a></p>
                   </div>
                 </div>
               </li>
-              <li class="span3">
-                <a href="#" class="btn btn-large">
-                  Click to creak new album
-                </a>
+              {% endfor %}
+
+              <li class="span3" id="new_album">
+                <a href="#creat_album" role="button" class="btn" data-toggle="modal"><h4>Click to creak new album</h4></a>
+                </button>
               </li>
-             
+
+              <div id="creat_album" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+                  <h3 id="myModalLabel">New Album</h3>
+                </div>
+                <div class="modal-body">
+                  <form class="form-horizontal" action="" method="post">
+                    {% if form.errors %}
+                      <h6 style="color: red;">
+                        Please correct the error below.
+                      </h6>
+                    {% else %}
+                      <h5>Field marked with "*" are mandatory</h5>
+                    {% endif %}
+                    
+                    <div class="control-group">
+                      <label class="control-label" for="id_album_name">Abum Name *</label>
+                      <div class="controls">
+                        {{ form.album_name.errors }}
+                        <input type="text" id="id_album_name" placeholder="Album_name">
+                        {{ form.album_name }} 
+                      </div>
+                    </div>    
+
+                    <div class="control-group">
+                      <label class="control-label" for="id_album_description">Description</label>
+                      <div class="controls">
+                        {{ form.album_description.errors }}
+                        <textarea rows="3" id="id_album_description" placeholder="Album_description"></textarea>
+                        {{ form.album_description }}  
+                      </div>
+                    </div>
+
+                 </form>
+
+                </div>
+                <div class="modal-footer">
+                  <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                  <button class="btn btn-primary" onclick="creat_album()">Save</button>
+                </div> 
+              </div>
+                
             </ul>
-          </div>
-
-
-         </div>
+        </div>
+      
       </div>
+
+    </div>
 
 {% endblock %}
