@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to AlbumR{% endblock %}
+
+{% block content %}
+
+
+<form class="form-horizontal" action="" method="post">
+  <h2>Sign up for AlbumR</h2>
+  <fieldset>
+    <legend>
+    {% if form.errors %}
+      <h6 style="color: red;">
+        Please correct the error below.
+      </h6>
+    {% else %}
+      <h4>Please fill the following information to sign up.</h4>
+      <h5>Field marked with "*" are mandatory</h5>
+    {% endif %}
+    </legend>
+  </fieldset>
+
+
+  <div class="control-group">
+    <label class="control-label" for="id_email">Email *</label>
+    <div class="controls">
+      {{ form.email.errors }}
+      <input type="text" id="id_email" placeholder="Email">
+      {{ form.email }}  
+      <span class="help-block">Your e-mail address</span>
+    </div>
+  </div>    
+
+  <div class="control-group">
+    <label class="control-label" for="id_password">Password *</label>
+    <div class="controls">
+      {{ form.password.errors }}
+      <input type="password" id="id_password" placeholder="Password">
+      {{ form.password }}
+      <span class="help-block">Set your password</span>
+    </div>
+  </div>    
+
+  <div class="control-group">
+    <label class="control-label" for="id_confirm_password">Comfirm Password *</label>
+    <div class="controls">
+      {{ form.comfirm_password.errors }}
+      <input type="password" id="id_confirm_password" placeholder="Password">
+      {{ form.comfirm_password }}
+      <span class="help-block">Confirm your password</span>
+    </div>
+  </div>    
+
+  <div class="control-group">
+    <label class="control-label" for="id_name">Name *</label>
+    <div class="controls">
+      {{ form.name.errors }}
+      <input type="text" id="id_name" placeholder="Name">  
+      {{ form.name }}
+      <span class="help-block">Your name (less than 20 characters)</span>
+    </div>
+  </div>
+  
+  <div class="control-group">
+    <div class="controls">
+      <button type="submit" class="btn btn-primary">Sign up</button>
+    </div>
+  </div>    
+
+</form>
+
+{% endblock %}

@@ -7,6 +7,15 @@ from django.contrib import auth
 def index(request):
 	return render_to_response('welcome/index.html', {},  context_instance=RequestContext(request))
 
+def sign_up(request):
+	return render_to_response('welcome/sign_up.html', {},  context_instance=RequestContext(request))
+
+def forget_password(request):
+	return render_to_response('welcome/forget_password.html', {},  context_instance=RequestContext(request))
+
+def album(request):
+	return render_to_response('album/album.html', {},  context_instance=RequestContext(request))
+
 
 
 def login_view(request):

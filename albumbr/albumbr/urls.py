@@ -9,7 +9,9 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'albumbr.views.home', name='home'),
     #url(r'^albumbr/', include('albums.views')),
-
+    url(r'^album/$', 'albumbr.views.album'),
+    url(r'^forget_password/$', 'albumbr.views.forget_password'),                   
+    url(r'^sign_up/$', 'albumbr.views.sign_up'),
     url(r'^$$', 'albumbr.views.index'),
 
     # Uncomment the admin/doc line below to enable admin documentation:
