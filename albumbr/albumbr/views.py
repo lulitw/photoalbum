@@ -16,6 +16,8 @@ def forget_password(request):
 def album(request):
 	return render_to_response('album/album.html', {},  context_instance=RequestContext(request))
 
+def page(request):
+	return render_to_response('album/page.html', {},  context_instance=RequestContext(request))
 
 
 def login_view(request):

@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'albumbr.views.home', name='home'),
     #url(r'^albumbr/', include('albums.views')),
+    url(r'^album/page/$', 'albumbr.views.page'),
     url(r'^album/$', 'albumbr.views.album'),
     url(r'^forget_password/$', 'albumbr.views.forget_password'),                   
     url(r'^sign_up/$', 'albumbr.views.sign_up'),
