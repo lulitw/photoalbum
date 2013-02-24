@@ -49,3 +49,137 @@ body {
     margin-bottom: 15px;
     padding: 7px 9px;
 }
+
+#create_page
+{
+     width: 1280px;
+     margin-left: -640px;
+}
+
+.page_view 
+{
+    width: 800px;
+    height: 600px;
+    padding: 5px;
+    /*float:left;*/
+    border: 1px solid #999;
+    overflow: hidden;
+}
+
+.page_edit
+{
+    width: 400px;
+    padding: 5px;
+    float:right;
+    border: 1px solid #999;
+}
+
+.page_template
+{
+    margin: 5px;
+    table-layout: fixed;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+#page_template_0_a 
+{
+    height: 590px;
+    width: 800px;
+}
+
+#page_template_1_a 
+{
+    height: 290px;
+    width: 800px;
+}
+
+#page_template_1_b
+{
+    height: 290px;
+    width: 800px;
+}
+
+#page_template_2_a 
+{
+    width: 390px;
+    height: 590px;   
+    float:left;
+}
+
+#page_template_2_b
+{
+    width: 390px;
+    height: 590px;
+    float: right;
+}
+
+#page_template_3_a 
+{
+    height: 290px;
+    width: 800px;
+    clear: both;
+}
+
+#page_template_3_b
+{
+    width: 390px;
+    height: 290px;
+    float: right;
+}
+
+#page_template_3_c 
+{
+    width: 390px;
+    height: 290px;   
+    float:left;
+}
+
+#page_template_4_a 
+{
+    width: 390px;
+    height: 590px;   
+    float:left;
+}
+
+#page_template_4_b
+{
+    width: 390px;
+    height: 290px;
+    float: right;
+}
+
+#page_template_4_c 
+{
+    width: 390px;
+    height: 290px;
+    float: right;
+}
+
+#page_template_5_a 
+{
+    width: 390px;
+    height: 290px;
+    float: right;
+}
+
+#page_template_5_b
+{
+    width: 390px;
+    height: 290px;
+    float: right;
+}
+
+#page_template_5_c 
+{
+    width: 390px;
+    height: 290px;
+    float: left;
+}
+
+#page_template_5_d 
+{
+    width: 390px;
+    height: 290px;
+    float: left;
+}
