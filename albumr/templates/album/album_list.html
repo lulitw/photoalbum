@@ -1,0 +1,36 @@
+<div class="row-fluid">
+
+    <a href="#create_album" class="btn-primary btn btn-large" data-toggle="modal">Create New Album</a> <br/>
+
+    <div class="row-fluid album-list">
+     <table class="table table-striped">
+         <thead>
+         <tr>
+             <th>Name</th>
+             <th>Short Description</th>
+             <th>No of Pages</th>
+             <th colspan="2"></th>
+         </tr>
+         </thead>
+        <tbody>
+
+        {% for album in user.user_albums.all %}
+        <tr>
+            <td>{{ album.name }}</td>
+            <td>{{ album.description }}</td>
+            <td>{{ album.pages.count }}</td>
+            <td><a href="/albums/{{ album.id }}/edit">Edit </a></td>
+            <td><a href="/albums/{{ album.id }}/delete" class="delete_album">Delete</a></td>
+
+            </td>
+        </tr>
+
+        {% endfor %}
+        </tbody>
+
+    </table>
+    </div>
+</div>
+
+
+
