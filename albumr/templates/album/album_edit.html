@@ -1,0 +1,18 @@
+{% extends "album/album_base.html" %}
+
+{% block album_content %}
+
+<div class="container-fluid ">
+    <div class="content-album ">
+    <h2>Editing  {{ album.name }} </h2>
+
+    {% include "album/album_editor.html" %}
+
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}
