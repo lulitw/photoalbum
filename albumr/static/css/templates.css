@@ -1,0 +1,47 @@
+/* CSS FOR LAYOUT TEMPLATES */
+.selectedp {
+    background: #555 !important;
+}
+.selectedi {
+    background: #ccc;
+}
+.template {
+    width: 670px;
+}
+.items {
+    cursor: pointer;
+}
+.items:hover {
+    opacity: 0.7;
+}
+
+.template1 .item0, .template1 .item1 {
+   height: 250px;
+   width: 670px;
+}
+.template1 .item0 img, .template1 .item1 img{
+    height: 250px;
+    width: 670px;
+}
+.template1 .item2 {
+    display:none;
+}
+
+
+.template2 {
+    display: block;
+}
+.template2 .item0 {
+    height: 500px;
+    width: 670px;
+}
+.template2 .item1 {
+    display:none;
+}
+.template2 .item0 img{
+    height: 500px;
+    width: 670px;
+}
+.template2 .item2 {
+    display:none;
+}

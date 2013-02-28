@@ -60,10 +60,19 @@ body {
     border-radius: 3px;
 
 }
-.editor-options select {
-    width: 200px;
-    height: 25px;
+.editor-options select{
+     width: 200px;
+     height: 25px;
+ }
+.editor-options input {
+    width: 180px;
 }
+
+.editor-options span {
+    font-size: 10px;
+    color:#666
+}
+
 
 
 #signup_button {

@@ -2,7 +2,14 @@
     <div class="span9 main-editor dot">
 
         <div class="page-editor">
-                <h3 style="font-weight: bolder; color: white; padding: 250px 200px; font-size: 40px; letter-spacing: 2">Editor Area</h3>
+            <div class="template">
+                <div class="items_list">
+                    <div  class="items">
+                        <img class="item_img" src="" />
+                    </div>
+                </div>
+            </div>
+
         </div>
         <div class="page-picker">
 
@@ -11,29 +18,36 @@
                     <i class="delpage icon-remove right " title="Remove"></i>
                     <span class="plist"> 1</span>
                 </li>
-                <li>
-                    <i class="delpage icon-remove right " title="Remove"></i>
-                    <span class="plist"> 2</span>
-                </li>
+
 
             </ul>
             <ul class="pages_list">
                 <li>
-                    <i class="addpage icon-plus right " title="Add Page"></i>
+                    <i id="add_page" class="icon-plus right " title="Add Page"></i>
                 </li>
             </ul>
         </div>
 
     </div>
     <div class="span3 editor-options ">
-        <div style="font-size: 10px; color:#666">Change Layout</div>
-        <div>
-            <select class="all_layouts">
-                <option>Layout One</option>
-            </select>
+        <div class="page_options">
+            <span>Page Name </span>
+            <input type="text" class="pname" />
+            <hr>
+            <span>Change Layout</span>
+            <div>
+                <select class="ptemplate">
+                    <option>Layout One</option>
+                </select>
+            </div>
+            <hr>
         </div>
-        <hr>
+        <div class="item_options">
 
+            <span>Image URL </span>
+            <input type="text" class="image_url" />
+            <hr>
+        </div>
     </div>
 </div>
 
