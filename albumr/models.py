@@ -17,14 +17,23 @@ class Album(models.Model):
 
 
 class Page(models.Model):
+    TEMPLATES = (
+        (u'template1', u'template1'),
+        (u'template2', u'template2'),
+        (u'template3', u'template3'),
+        (u'template4', u'template4'),
+        )
     album = models.ForeignKey(Album, related_name='pages')
     caption = models.CharField(max_length=200)
-    dimensions =  models.CharField(max_length=100)
+    template =  models.CharField(max_length=100)
     position = models.IntegerField()
     created = models.DateTimeField(default=datetime.now)
 
     def __unicode__(self):
         return self.caption
+
+    class Meta:
+        ordering = ['position']
 
 
 class PageItem(models.Model):
@@ -34,4 +43,9 @@ class PageItem(models.Model):
         )
     page = models.ForeignKey(Page, related_name='page_items')
     type = models.CharField(max_length=10, choices=ITEM_TYPES)
+    position = models.IntegerField()
+    value = models.TextField()
+
+    class Meta:
+        ordering = ['position']
 

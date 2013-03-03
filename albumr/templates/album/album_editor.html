@@ -1,29 +1,46 @@
 <div class="row-fluid ">
     <div class="span9 main-editor dot">
-
+    <input type="hidden" class="album_id" value="{{album.id}}" />
+        <div class="page-picker">
+            <ul class="pages" >
+                <li>
+                    <span class="plist"> 1</span>
+                </li>
+            </ul>
+            <ul class="">
+                <li>
+                    <i class="add_page icon-plus " title="Add Page"></i>
+                </li>
+            </ul>
+        </div>
         <div class="page-editor">
+            <i class="delpage icon-remove right " title="Remove"></i>
+
             <div class="template">
+               <!-- <span class="texts txt0">Text 1</span>
+                <span class="texts txt1">Text 1</span>
+                <span class="texts txt2">Text 1</span>-->
+
                 <div class="items_list">
                     <div  class="items">
                         <img class="item_img" src="" />
                     </div>
+
                 </div>
             </div>
 
         </div>
-        <div class="page-picker">
+        <img class="nopage" src="{{ STATIC_URL }}/img/nopage.gif" />
 
-            <ul id="pages" class="pages_list">
+        <div class="page-picker">
+            <ul class="pages" >
                 <li>
-                    <i class="delpage icon-remove right " title="Remove"></i>
                     <span class="plist"> 1</span>
                 </li>
-
-
             </ul>
-            <ul class="pages_list">
+            <ul class="">
                 <li>
-                    <i id="add_page" class="icon-plus right " title="Add Page"></i>
+                    <i class="add_page icon-plus " title="Add Page"></i>
                 </li>
             </ul>
         </div>
@@ -31,7 +48,7 @@
     </div>
     <div class="span3 editor-options ">
         <div class="page_options">
-            <span>Page Name </span>
+            <span>Caption </span>
             <input type="text" class="pname" />
             <hr>
             <span>Change Layout</span>

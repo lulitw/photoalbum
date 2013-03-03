@@ -6,8 +6,25 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
+#container_public {
+    width: 700px;
+    border: 2px solid #ccc;
+    padding: 10px 35px 10px 60px;
+    border-radius: 15px;
+    min-height: 500px;
+    height: auto;
+    margin: 0 auto;
+    background: #f5f5f5;
+}
+
+#container_public .template {
+    background: none;
+}
 .dot {
     border: 1px solid #ccc;
+}
+.right {
+    float:right
 }
 
 .content {
@@ -26,7 +43,7 @@ body {
 
 /* Album Editor */
 .page-editor {
-    margin: 20px;
+    margin: 10px 20px ;
     background: whiteSmoke;
     min-height: 500px !important;
 
@@ -36,10 +53,10 @@ body {
     min-height: 25px;
 }
 }
-.pages_list {
+.page-picker ul {
     list-style: none;
 }
-.pages_list li {
+.page-picker ul li {
     cursor: pointer;
     text-align: center;
     border: 1px solid #ccc;
@@ -50,6 +67,10 @@ body {
     display: inline-table;
     border-radius: 3px;
     float: left;
+}
+.plist {
+    display: block;
+
 }
 
 .editor-options {
@@ -73,7 +94,13 @@ body {
     color:#666
 }
 
-
+.delpage {
+    margin-top: -40px;
+    cursor: pointer;
+}
+.delpage:hover {
+    opacity: 0.7;
+}
 
 #signup_button {
     position: absolute;    
@@ -119,138 +146,4 @@ body {
     height: auto;
     margin-bottom: 15px;
     padding: 7px 9px;
-}
-
-#create_page
-{
-     width: 1280px;
-     margin-left: -640px;
-}
-
-.page_view 
-{
-    width: 800px;
-    height: 600px;
-    padding: 5px;
-    /*float:left;*/
-    border: 1px solid #999;
-    overflow: hidden;
-}
-
-.page_edit
-{
-    width: 400px;
-    padding: 5px;
-    float:right;
-    border: 1px solid #999;
-}
-
-.page_template
-{
-    margin: 5px;
-    table-layout: fixed;
-    word-wrap: break-word;
-    overflow: hidden;
-}
-
-#page_template_0_a 
-{
-    height: 590px;
-    width: 800px;
-}
-
-#page_template_1_a 
-{
-    height: 290px;
-    width: 800px;
-}
-
-#page_template_1_b
-{
-    height: 290px;
-    width: 800px;
-}
-
-#page_template_2_a 
-{
-    width: 390px;
-    height: 590px;   
-    float:left;
-}
-
-#page_template_2_b
-{
-    width: 390px;
-    height: 590px;
-    float: right;
-}
-
-#page_template_3_a 
-{
-    height: 290px;
-    width: 800px;
-    clear: both;
-}
-
-#page_template_3_b
-{
-    width: 390px;
-    height: 290px;
-    float: right;
-}
-
-#page_template_3_c 
-{
-    width: 390px;
-    height: 290px;   
-    float:left;
-}
-
-#page_template_4_a 
-{
-    width: 390px;
-    height: 590px;   
-    float:left;
-}
-
-#page_template_4_b
-{
-    width: 390px;
-    height: 290px;
-    float: right;
-}
-
-#page_template_4_c 
-{
-    width: 390px;
-    height: 290px;
-    float: right;
-}
-
-#page_template_5_a 
-{
-    width: 390px;
-    height: 290px;
-    float: right;
-}
-
-#page_template_5_b
-{
-    width: 390px;
-    height: 290px;
-    float: right;
-}
-
-#page_template_5_c 
-{
-    width: 390px;
-    height: 290px;
-    float: left;
-}
-
-#page_template_5_d 
-{
-    width: 390px;
-    height: 290px;
-    float: left;
 }

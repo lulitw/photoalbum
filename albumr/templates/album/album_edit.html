@@ -4,7 +4,11 @@
 
 <div class="container-fluid ">
     <div class="content-album ">
-    <h2>Editing  {{ album.name }} </h2>
+        <div class="row-fluid">
+            <h2 style="float:left; width: 90%">Editing  {{ album.name }} </h2>
+
+            <button style="float:left; margin-top: 10px" class="btn btn-primary" id="save_all">Save</button>
+        </div>
 
     {% include "album/album_editor.html" %}
 

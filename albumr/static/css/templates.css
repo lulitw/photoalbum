@@ -5,16 +5,35 @@
 .selectedi {
     background: #ccc;
 }
-.template {
-    width: 670px;
+.album_description {
+    display: block;
+    min-height: 30px;
+    height: auto;;
+    line-height: 30px;
+    font-size: 20px;
+    text-align: justify;
 }
-.items {
+.template {
+    width: 100%;
+    background: white;
+}
+.main-editor .items, .main-editor .texts {
     cursor: pointer;
 }
-.items:hover {
+
+.main-editor .items:hover, .main-editor .texts:hover{
     opacity: 0.7;
+    background: #f5f5f5;
 }
 
+.main-editor .texts {
+    display: block;
+    font-size: 24px;
+    line-height: 40px;
+    border: 1px solid whitesmoke;
+    padding: 10px;
+    border-radius: 3px;
+}
 .template1 .item0, .template1 .item1 {
    height: 250px;
    width: 670px;
@@ -45,3 +64,34 @@
 .template2 .item2 {
     display:none;
 }
+
+.template2 .txt2, .template2 .txt1 {
+    display: none;
+}
+
+.template3 {
+    display: block;
+    height: 500px;
+}
+
+.template3 .item3, .template3 .item2, .template3 .item3 {
+    display:block;
+}
+.template3 .item0 {
+    height: 250px;
+    width: 670px;
+}
+.template3 .item0 img{
+    height: 250px;
+    width: 670px;
+}
+.template3 .item1, .template3 .item2   {
+    height: 250px;
+    width: 335px;
+    float: left;
+}
+.template3 .item1 img, .template3 .item2 img  {
+    height: 250px;
+    width: 335px;
+}
+

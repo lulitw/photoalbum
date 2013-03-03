@@ -7,7 +7,7 @@ aria-hidden="true">
             New Album</h3>
     </div>
     <div class="modal-body">
-        <form class="form-horizontal" action="" method="post">
+        <form class="form-horizontal" id="album_form" action="{% url am_save %}" method="post"> {% csrf_token %}
             {% if form.errors %}
             <h6 style="color: red;">
                 Please correct the error below.
@@ -18,28 +18,26 @@ aria-hidden="true">
             {% endif %}
             <div class="control-group">
                 <label class="control-label" for="id_album_name">
-                    Abum Name *</label>
+                    Album Name *</label>
                 <div class="controls">
-                    {{ form.album_name.errors }}
-                    <input type="text" id="id_album_name" placeholder="Album_name">
-                    {{ form.album_name }}
+                    {{ form.name.errors }}
+                    {{ form.name }}
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="id_album_description">
                     Description</label>
                 <div class="controls">
-                    {{ form.album_description.errors }}
-                    <textarea rows="4" id="id_album_description" placeholder="Album_description"></textarea>
-                    {{ form.album_description }}
+                    {{ form.description.errors }}
+                    {{ form.description }}
                 </div>
             </div>
-        </form>
+
     </div>
     <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">
             Close</button>
-        <button class="btn btn-primary" onclick="create_album()">
-            Save</button>
+        <input type="submit" class="btn btn-primary asubmit" value="Save" />
+        </form>
     </div>
 </div>
