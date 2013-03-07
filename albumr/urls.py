@@ -4,6 +4,7 @@ from albumr import views
 # albumr related urls
 
 urlpatterns = patterns('',
+    url(r'^social_auth/', include('social_auth.urls')),
     url(r'^$', views.albums, name='am_home'),
 
     url(r'(\d+)/edit/$', views.album_edit, name='am_edit'),
