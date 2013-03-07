@@ -4,27 +4,27 @@
 
 {% block content %}
 
- <div class="navbar navbar-inverse navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="brand" href="{% url am_home %}">AlbumR</a>
-          <div class="nav-collapse collapse">
-            <p class="navbar-text pull-right">
-              {% if user.is_authenticated %}
-                Hello {{ user.username }} !
-                <a href="{% url logout %}" class="navbar-link">Sign out</a>
-              {% endif %}
-            </p>
-
-          </div><!--/.nav-collapse -->
-        </div>
+<!-- Navigation bar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="{% url am_home %}">AlbumR</a>
+        <div class="nav-collapse collapse">
+          <p class="navbar-text pull-right">
+            {% if user.is_authenticated %}
+              Hello {{ user.username }} !
+              <a href="{% url logout %}" class="navbar-link">Sign out</a>
+            {% endif %}
+          </p>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
+  </div>
 
 {% block album_content %}
     

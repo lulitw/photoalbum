@@ -1,43 +1,29 @@
-<div id="create_album" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel
-aria-hidden="true">
+<!-- New albunm creat form -->
+<div id="create_album" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
             <i class="icon-remove"></i></button>
-        <h3 id="myModalLabel">
-            New Album</h3>
+        <h3 id="myModalLabel">New Album</h3>
     </div>
     <div class="modal-body">
         <form class="form-horizontal" id="album_form" action="{% url am_save %}" method="post"> {% csrf_token %}
-            {% if form.errors %}
-            <h6 style="color: red;">
-                Please correct the error below.
-            </h6>
-            {% else %}
-            <h5>
-                Field marked with "*" are mandatory</h5>
-            {% endif %}
+            <h5>Field marked with "*" are mandatory</h5>
             <div class="control-group">
-                <label class="control-label" for="id_album_name">
-                    Album Name *</label>
+                <label class="control-label" for="id_name">Album Name *</label>
                 <div class="controls">
-                    {{ form.name.errors }}
                     {{ form.name }}
                 </div>
             </div>
             <div class="control-group">
-                <label class="control-label" for="id_album_description">
-                    Description</label>
+                <label class="control-label" for="id_description">Description</label>
                 <div class="controls">
-                    {{ form.description.errors }}
                     {{ form.description }}
                 </div>
             </div>
-
+            <input type="submit" class="btn btn-primary asubmit" value="Save" />
+        </form>
     </div>
     <div class="modal-footer">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">
-            Close</button>
-        <input type="submit" class="btn btn-primary asubmit" value="Save" />
-        </form>
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>       
     </div>
 </div>
