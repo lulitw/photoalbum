@@ -10,17 +10,18 @@
 
     <div class="row-fluid album-list">
         {% if user.user_albums.all %}
-
+        <!-- Album table header -->
         <table class="table table-striped">
          <thead>
          <tr>
              <th>Name</th>
              <th style="width: 60%">Short Description</th>
-             <th>No of Pages</th>
+             <th>Number of Pages</th>
              <th colspan="3">Actions</th>
          </tr>
          </thead>
         <tbody>
+        <!-- Show album table content -->
         {% for album in user.user_albums.all %}
         <tr>
             <td>{{ album.name }}</td>
@@ -29,9 +30,6 @@
             <td><a href="{% url am_edit album.id %} ">Edit </a></td>
             <td><a href="{% url am_delete album.id %} " class="delete_album">Delete</a></td>
             <td><a href="{% url am_public album.unique_url %}" class="share_album" target="_blank">Share</a></td>
-
-
-            </td>
         </tr>
 
         {% endfor %}

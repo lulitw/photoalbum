@@ -5,14 +5,12 @@
 <div class="container-fluid ">
     <div class="content-album ">
         <div class="row-fluid">
-            <h2 style="float:left; width: 90%">Editing  {{ album.name }} </h2>
+            <h2 class="edit_head">Editing  {{ album.name }} </h2>
 
-            <button style="float:left; margin-top: 10px" class="btn btn-primary" id="save_all">Save</button>
+            <button class="btn btn-primary edit_save" id="save_all">Save</button>
         </div>
 
     {% include "album/album_editor.html" %}
-
-
 
     </div>
 </div>

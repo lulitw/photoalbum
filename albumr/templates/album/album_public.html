@@ -28,7 +28,11 @@
 
 </head>
 
+
 <body>
+<div class="container">
+    <button class="btn btn-primary" onclick="javascript:copyToClipBoard(); return (false);" >Click to copy the URL</button>
+</div>
 <div id="container_public" >
     <div>
         <h1>{{ album.name }}</h1>
@@ -82,12 +86,21 @@
     <p class="album_description">{{ album.description }}</p>
 </div>
 
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_floating_style addthis_32x32_style" style="left:50px;top:50px;">
+<h3>Share</h3>
+<a class="addthis_button_preferred_1"></a>
+</div>
+<script type="text/javascript">    var addthis_config = { "data_track_addressbar": true };var addthis_share = { title: "Welcome to see my album in AlbumR: " };</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51307e0d3610be93"></script>
+<!-- AddThis Button END -->
+
 <!-- /container -->
 
 
 <script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
 <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-
+<script src="{{ STATIC_URL }}js/copy_url.js"></script>
 </body>
 </html>
 

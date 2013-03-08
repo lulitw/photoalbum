@@ -1,59 +1,51 @@
-<div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel
-aria-hidden="true">
-<div class="modal-header">
+
+<!-- Signup form -->
+<div id="signup" class="modal hide fade" tabindex="-1" role="dialog" aria-hidden="true">
+  
+  <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
         <i class="icon-remove"></i></button>
     <h3 > Sign Up</h3>
-</div>
-<div class="modal-body">
+  </div>
 
+  <div class="modal-body">
     <form class="form-horizontal" action="{% url signup %}" method="post">{% csrf_token %}
         <fieldset>
             <legend>
-                {% if rform.errors %}
-                <h6 style="color: red;">
-                    Please correct the error below.
-                </h6>
-                {% else %}
-                <h4>Please fill the following information to sign up.</h4>
-                <h5>Field marked with "*" are mandatory</h5>
-                {% endif %}
+               Please fill the following information to sign up.
+               <br/>
+               Field marked with "*" are mandatory.
             </legend>
         </fieldset>
-
 
         <div class="control-group">
             <label class="control-label" for="id_email">Email *</label>
             <div class="controls">
-                {{ rform.email.errors }}
                 {{ rform.email }}
                 <span class="help-block">Your e-mail address</span>
             </div>
         </div>
 
         <div class="control-group">
-            <label class="control-label" for="id_password">Password *</label>
+            <label class="control-label" for="id_password1">Password *</label>
             <div class="controls">
-                {{ rform.password1.errors }}
                 {{ rform.password1 }}
                 <span class="help-block">Set your password</span>
             </div>
         </div>
 
         <div class="control-group">
-            <label class="control-label" for="id_confirm_password">Confirm Password *</label>
+            <label class="control-label" for="id_password2">Confirm Password *</label>
             <div class="controls">
-                {{ rform.password2.errors }}
                 {{ rform.password2 }}
                 <span class="help-block">Confirm your password</span>
             </div>
         </div>
-
-
-</div>
-<div class="modal-footer">
-    <button class="btn" data-dismiss="modal" aria-hidden="true">
-        Close</button>
-    <input type="submit" class="btn btn-primary asubmit" value="Sign Up" />
+ 
+      <input type="submit" class="btn btn-primary asubmit" value="Sign Up" />
     </form>
+ </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>    
+  </div>
 </div>

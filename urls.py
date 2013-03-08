@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', 'views.index', name='home'),
+    url(r'^social_auth/', include('social_auth.urls')),
     url('^login/$', 'views.login', name='login'),
     url('^logout/$', 'views.signout', name='logout'),
     url('^signup/$', 'views.signup', name='signup'),
