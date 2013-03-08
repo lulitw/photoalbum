@@ -28,7 +28,11 @@
 
 </head>
 
+
 <body>
+<div class="container">
+    <button class="btn btn-primary" onclick="javascript:copyToClipBoard(); return (false);" >Click to copy the URL</button>
+</div>
 <div id="container_public" >
     <div>
         <h1>{{ album.name }}</h1>
@@ -96,7 +100,7 @@
 
 <script src="{{ STATIC_URL }}js/jquery-1.7.2.min.js"></script>
 <script src="{{ STATIC_URL }}js/bootstrap.min.js"></script>
-
+<script src="{{ STATIC_URL }}js/copy_url.js"></script>
 </body>
 </html>
 

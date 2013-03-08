@@ -55,9 +55,9 @@ MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 # Login Redirect URL
 #LOGIN_REDIRECT_URL = '/'
 #LOGIN_URL = '/'
-LOGIN_URL          = '/login-form/'
+LOGIN_URL          = '/'
 LOGIN_REDIRECT_URL = '/albums/'
-LOGIN_ERROR_URL    = '/login-error/'
+LOGIN_ERROR_URL    = '/'
 
 INTERNAL_IPS = ('127.0.0.1',)
 

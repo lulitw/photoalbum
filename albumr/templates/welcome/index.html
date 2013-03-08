@@ -45,7 +45,7 @@
       <div class="control-group">
         <div class="controls">
           <a href="#signup" data-toggle="modal">Do not have an account? Sign up now!</a> <br/>
-          <a href="" data-toggle="modal">Sign in with Google account!</a> <br/>
+          Sign in with <a href="{% url socialauth_begin "google" %}" data-toggle="modal">Google </a><a href="{% url socialauth_begin "yahoo" %}" data-toggle="modal">Yahoo </a>account! <br/>         
         </div>
       </div>
     </form>
