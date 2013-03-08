@@ -187,7 +187,7 @@ createViewModel = function () {
 
             },
             success:function (result) {
-                l(result);
+               // l(result);
                 if(result.pages) {
                     window.location.hash = result.pages[0]['id'];
                     location.reload();

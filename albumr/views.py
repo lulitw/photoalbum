@@ -45,16 +45,23 @@ def album_save(request):
 @login_required
 def album_edit(request, album_id):
     album = get_object_or_404(Album, id=album_id)
-    params = {'album': album}
+    if request.user.id != album.owner.id:
+        messages.error(request, "You are not allowed to access that.")
+        return HttpResponseRedirect(reverse('am_home'))
 
+    params = {'album': album}
     return render_to_response('album/album_edit.html', params,  context_instance=RequestContext(request))
 
 def album_delete(request, album_id):
     album = get_object_or_404(Album, id=album_id)
+    if request.user.id != album.owner.id:
+        messages.error(request, "You are not allowed to access that.")
+        return HttpResponseRedirect(reverse('am_home'))
+
     album.delete()
 
     messages.success(request, "Album was deleted.")
-    return HttpResponseRedirect('/albums/')
+    return HttpResponseRedirect(reverse('am_home'))
 
 def album_public(request, album_unique_url):
 
@@ -118,7 +125,7 @@ def album_save_all(request):
 
         page.caption = p['page_name']
         page.template = p['template']
-        page.position = c
+        page.position =  c
         page.save()
 
         items = []

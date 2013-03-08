@@ -8,6 +8,8 @@ from albumr import views
 admin.autodiscover()
 
 urlpatterns = patterns('',
+    url(r'^admin/', include(admin.site.urls)),
+
     url(r'^$', 'views.index', name='home'),
     url('^login/$', 'views.login', name='login'),
     url('^logout/$', 'views.signout', name='logout'),
@@ -19,7 +21,6 @@ urlpatterns = patterns('',
     url(r'^(\w+)/$', views.album_public, name='am_public'),
 
 
-    url(r'^admin/', include(admin.site.urls)),
 )
 urlpatterns += staticfiles_urlpatterns()
 

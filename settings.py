@@ -46,7 +46,7 @@ USE_I18N = True
 USE_L10N = True
 
 # If you set this to False, Django will not use timezone-aware datetimes.
-USE_TZ = True
+USE_TZ = False
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
@@ -121,6 +121,9 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
     get_path('templates')
 )
+
+#TEST_DISCOVER_ROOT = get_path('tests')
+#TEST_RUNNER = 'discover_runner.DiscoverRunner'
 
 INSTALLED_APPS = (
     'django.contrib.auth',

@@ -4,6 +4,8 @@ from datetime import datetime, timedelta
 from django.contrib.auth.models import User
 
 from albumr.utils import random_string
+from django.utils import timezone
+
 
 class Album(models.Model):
     name = models.CharField(max_length=200)
@@ -45,6 +47,27 @@ class PageItem(models.Model):
     type = models.CharField(max_length=10, choices=ITEM_TYPES)
     position = models.IntegerField()
     value = models.TextField()
+
+    # position should be 0, 1 or 2
+
+    def save(self, *args, **kwargs):
+
+        positions = self.page.page_items.values('position').order_by('position')
+        allowed = [0,1,2]
+        if self.id is not None :
+          super(PageItem, self).save(**kwargs)
+
+        if self.page.page_items.all().count() <  3:
+            print 'count less than 3'
+            for p in positions:
+                if p['position'] == self.position:
+                   allowed.remove(self.position)
+                   self.position = allowed[0]
+
+            super(PageItem, self).save(**kwargs)
+
+
+
 
     class Meta:
         ordering = ['position']
