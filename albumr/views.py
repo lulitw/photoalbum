@@ -9,14 +9,12 @@ from django.core.urlresolvers import reverse
 from django.contrib import auth
 from django.utils import simplejson
 
-
 from django.contrib.auth.decorators import login_required
-
 
 from albumr.models import Album, Page, PageItem
 from albumr.forms import AlbumForm
 
-
+#home page view for authenticated users
 @login_required
 def albums(request):
     form = AlbumForm(
@@ -36,7 +34,7 @@ def album_save(request):
             messages.success(request, "Album was created.")
         else:
             messages.error(request, 'Unable to create Album.', form.errors)
-            print 'form is not valid ! ', form.errors
+            #print 'form is not valid ! ', form.errors
 
 
     return HttpResponseRedirect('/albums/')
@@ -59,10 +57,10 @@ def album_delete(request, album_id):
         return HttpResponseRedirect(reverse('am_home'))
 
     album.delete()
-
     messages.success(request, "Album was deleted.")
     return HttpResponseRedirect(reverse('am_home'))
 
+# public view of albums
 def album_public(request, album_unique_url):
 
     album = get_object_or_404(Album, unique_url=album_unique_url)
@@ -70,13 +68,15 @@ def album_public(request, album_unique_url):
 
     return render_to_response('album/album_public.html', params,  context_instance=RequestContext(request))
 
+#print album information in JSON format for the album editor
+
 @login_required
 def album_get(request, album_id):
-    print 'hhere'
+
     album = get_object_or_404(Album, id=album_id)
     result = {}
     result['name'] = album.name
-    result['pages'] = album_json(album)
+    result['pages'] = album_json(album) # JSONify page elements
 
     return HttpResponse(simplejson.dumps(result), mimetype='application/json')
 
@@ -111,15 +111,18 @@ def album_save_all(request):
 
     album = get_object_or_404(Album, id=result['album_id'])
 
-    c = 0
+    c = 0 # this counter is used to correctly set the page position if a page has been deleted
 
     for i, p in enumerate(result['pages']):
+        # handle existing pages
         if type(p['page_id']) is int:
             page = Page.objects.get(pk=p['page_id'])
+            # if a page is deleted, the _destroy property will be set
             if(p.has_key('_destroy') and p['_destroy']):
                 page.delete()
                 c -= 1
                 break
+        # create new page, since it doesnt exist
         else:
             page = Page()
             page.album = album
@@ -131,7 +134,7 @@ def album_save_all(request):
 
         items = []
         for j, it in enumerate(p['items']):
-            if j > 2: # no more than 3 items
+            if j > 2: # no more than 3 items -> obsolete, now save method handles this
                 break
             if(it.has_key('item_id') and it['item_id']):
                 item = PageItem.objects.get(pk=it['item_id'])
@@ -140,7 +143,7 @@ def album_save_all(request):
                 item.page = page
 
             item.value = it['image_url'] if it.has_key('image_url') else ''
-            item.type = 'image'
+            item.type = 'image' # other type is not used, default is image
             item.position = it['position']
             item.save()
             items.append(item.id)
@@ -155,23 +158,3 @@ def album_save_all(request):
     result['pages'] = album_json(album)
 
     return HttpResponse(simplejson.dumps(result), mimetype='application/json')
-
-
-
-def login_view(request):
-    username = request.POST.get('username', '')
-    password = request.POST.get('password', '')
-    user = auth.authenticate(username=username, password=password)
-    if user is not None and user.is_active:
-        # Correct password, and the user is marked "active"
-        auth.login(request, user)
-        # Redirect to a success page.
-        return HttpResponseRedirect("/account/loggedin/")
-    else:
-        # Show an error page
-        return HttpResponseRedirect("/account/invalid/")
-
-def logout_view(request):
-    auth.logout(request)
-    # Redirect to a success page.
-    return HttpResponseRedirect("/account/loggedout/")
