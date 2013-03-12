@@ -1,1 +1,1 @@
-web: python manage.py collectstatic --noinput; bin/gunicorn_django --workers=4 --bind=0.0.0.0:$PORT settings.py
+webb: python manage.py collectstatic --noinput; gunicorn --workers=4 --bind=0.0.0.0:$PORT settings.py
