@@ -144,6 +144,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'albumr',
     'social_auth',
+    'gunicorn',
     #'debug_toolbar'
 )
 
