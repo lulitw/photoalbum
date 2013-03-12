@@ -179,3 +179,17 @@ body {
     margin-bottom: 15px;
     padding: 7px 9px;
 }
+
+/* Public View */
+
+.addthis_toolbox
+{
+    left:50px;
+    top:80px;
+}
+
+#copy_url_button
+{
+position: fixed;
+left: 50px;
+}
