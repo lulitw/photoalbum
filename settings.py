@@ -6,7 +6,7 @@ def get_path(filename):
 
 PROJECT_DIR = os.path.dirname(__file__)
 
-DEBUG = True # bool(os.environ.get('DJANGO_DEBUG', ''))
+DEBUG = False # bool(os.environ.get('DJANGO_DEBUG', ''))
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
