@@ -5,7 +5,7 @@ def get_path(filename):
 
 PROJECT_DIR = os.path.dirname(__file__)
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -232,7 +232,5 @@ YAHOO_CONSUMER_KEY           = ''
 YAHOO_CONSUMER_SECRET        = ''
 READABILITY_CONSUMER_SECRET  = ''
 READABILITY_CONSUMER_SECRET  = ''
-
-
 
 

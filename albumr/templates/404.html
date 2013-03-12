@@ -1,9 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title></title>
+    <meta charset="utf-8">
+    <title>Not Found</title>
+
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Le styles -->
+    <link href="{{ STATIC_URL }}css/bootstrap.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/style.css" rel="stylesheet">
+    <link href="{{ STATIC_URL }}css/templates.css" rel="stylesheet">
+
+
+    <link href="{{ STATIC_URL }}css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="{{ BASE_URL }}js/html5shiv.js"></script>
+    <![endif]-->
+
+    <script>
+        var base_url = '{% url home  %}';
+    </script>
+
 </head>
+
 <body>
-Not found
+<div id="container">
+    <h1>Not Found </h1> <br/>
+    <a href="{% url home  %}">Go Back</a>
+</div>
+
+
+
 </body>
 </html>

@@ -3,4 +3,5 @@
 .idea/*
 .DS_STORE
 albumbr.db
+venv
 
