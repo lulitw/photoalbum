@@ -4,4 +4,8 @@
 .DS_STORE
 albumbr.db
 venv
-static/*
+static/admin/*
+static/css/*
+static/js/*
+static/img/*
+
