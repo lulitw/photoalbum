@@ -1,6 +1,6 @@
 from django.conf.urls import *
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from django.conf import settings
 
 from django.contrib import admin
 from albumr import views
@@ -23,5 +23,9 @@ urlpatterns = patterns('',
 
 
 )
-urlpatterns += staticfiles_urlpatterns()
 
+if settings.DEBUG:
+    urlpatterns += staticfiles_urlpatterns()
+else:
+    urlpatterns += patterns('',
+    (r'static/(?P.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),)
