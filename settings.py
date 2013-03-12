@@ -64,7 +64,7 @@ INTERNAL_IPS = ('127.0.0.1',)
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = 'http://localhost:8000/media/admin/'
+#MEDIA_URL = 'http://localhost:8000/media/admin/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -90,6 +90,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
+
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'rf$sto2py)+=zjg-le_)nja3)+m&amp;0ki3hbbpbeufv4+^og@#&amp;1'

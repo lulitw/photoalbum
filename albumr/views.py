@@ -72,6 +72,7 @@ def album_public(request, album_unique_url):
 
 @login_required
 def album_get(request, album_id):
+    print 'hhere'
     album = get_object_or_404(Album, id=album_id)
     result = {}
     result['name'] = album.name

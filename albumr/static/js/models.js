@@ -16,7 +16,6 @@ function getCookie(name) {
     }
     return cookieValue;
 }
-var base_url = 'http://127.0.0.1:8000/';
 
 pageModel = function (page) {
     var self = this;

@@ -19,6 +19,7 @@ $(".page-editor")           .attr('data-bind', 'with: chosenPage, visible: $root
 $('.template')               .attr('data-bind',"attr: { class: 'template ' + template()  } ");
 
 $('.items_list')             .attr('data-bind', 'foreach: items');
+
 $('.items')                  .attr('data-bind', 'attr: {class : "items item" + position() }, click: $root.selectItem, '
                                 + ' css: {selectedi: $root.isItemSelected($data)}');
 
@@ -37,9 +38,11 @@ vm = createViewModel();
 
 ko.applyBindings(vm);
 
-setTimeout(function() {
-    vm.loadPages();
-}, 20);
+if(typeof(loadpages) != 'undefined' && loadpages) {
+    setTimeout(function() {
+        vm.loadPages();
+    }, 20);
+}
 
 // Handle Routing -Client-side routes
 Sammy(
